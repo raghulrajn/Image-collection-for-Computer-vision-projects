@@ -10,17 +10,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-DRIVER_PATH = "C://Users//Raghul raj N//Downloads//chromedriver_win32//chromedriver.exe"
+DRIVER_PATH = "<PATH>//chromedriver.exe"
 
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 driver = webdriver.Chrome(options=options)
 wd = webdriver.Chrome(executable_path=DRIVER_PATH, chrome_options=options)
-# wd.get('https://google.com')
-# search_box = wd.find_element_by_css_selector('input.gLFyf')
-# search_box.send_keys('Dogs')
-# time.sleep(5)
+
 def fetch_image_urls(
     query: str,
     max_links_to_fetch: int,
@@ -108,7 +105,7 @@ def persist_image(folder_path: str, url: str):
 def search_and_download(
     search_term: str,
     driver_path: str,
-    target_path="R://topcoder//noshoe",
+    target_path="<TARGET PATH TO SAVE IMAGES>",
     number_images=70,
 ):
     # target_folder = os.path.join(target_path,'_'.join(search_term.lower().split(' ')))
@@ -127,12 +124,7 @@ def search_and_download(
 
 
 terms = [
-    "bare foot",
-    "foot",
-    "foot men",
-    "foot women",
-    "foot walking",
-    "foot walk",
+   "DOGS", "CATS"
 ]
 
 for search_term in terms:
